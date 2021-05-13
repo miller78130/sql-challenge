@@ -39,11 +39,11 @@ DROP TABLE employees;
 CREATE TABLE employees (
     emp_no BIGINT NOT NULL,
     emp_title_id VARCHAR(10),
-    birth_date VARCHAR(20),
+    birth_date DATE,
     first_name VARCHAR(20),
     last_name VARCHAR(20),
     sex VARCHAR(2),
-    hire_date VARCHAR(20),
+    hire_date DATE,
 	PRIMARY KEY (emp_no)
 );
 
