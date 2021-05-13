@@ -40,6 +40,8 @@ WHERE first_name = 'Hercules' AND last_name LIKE 'B%';
 /* List all employees in the Sales department, including their employee number, last name, first name,
 	and department name. */
 
+
+
 SELECT emp_no, last_name, first_name
 FROM employees
 WHERE emp_no IN 
@@ -52,8 +54,14 @@ WHERE emp_no IN
 		FROM departments AS d
 		WHERE d.dept_name = 'Sales'));
 
+
+
+
+
 /* List all employees in the Sales and Development departments, including their employee number, last name,
 	first name, and department name. */
+
+
 
 SELECT emp_no, last_name, first_name
 FROM employees
@@ -66,6 +74,12 @@ WHERE emp_no IN
 		SELECT dept_no
 		FROM departments
 		WHERE dept_name = 'Sales' OR dept_name = 'Development'));
+
+
+
+
+
+
 
 
 /* In descending order, list the frequency count of employee last names, i.e.,
