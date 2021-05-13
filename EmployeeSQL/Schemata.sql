@@ -13,8 +13,7 @@ DROP TABLE dept_emp;
 
 CREATE TABLE dept_emp ( 
     emp_no BIGINT NOT NULL,
-    dept_no VARCHAR(5) NOT NULL,
-	PRIMARY KEY (emp_no)
+    dept_no VARCHAR(5) NOT NULL
 );
 
 SELECT * FROM dept_emp;
