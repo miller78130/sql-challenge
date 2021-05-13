@@ -91,6 +91,13 @@ GROUP BY last_name
 ORDER BY COUNT(last_name)DESC
 
 
+/* EPILOGUE */
+
+Select emp_no, first_name,last_name
+From employees 
+WHERE emp_no = 499942
+
+
 
 
 
