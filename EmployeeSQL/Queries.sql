@@ -40,45 +40,23 @@ WHERE first_name = 'Hercules' AND last_name LIKE 'B%';
 /* List all employees in the Sales department, including their employee number, last name, first name,
 	and department name. */
 
-
-
-SELECT emp_no, last_name, first_name
-FROM employees
-WHERE emp_no IN 
-(
-	SELECT emp_no
-	FROM dept_emp
-	WHERE dept_no IN
-	(
-		SELECT dept_no
-		FROM departments AS d
-		WHERE d.dept_name = 'Sales'));
-
-
+SELECT e.emp_no, e.last_name, e.first_name, d.dept_name
+FROM departments AS d
+JOIN dept_emp AS de ON (d.dept_no = de.dept_no)
+JOIN employees AS e ON (de.emp_no = e.emp_no)
+Where dept_name = 'Sales';
 
 
 
 /* List all employees in the Sales and Development departments, including their employee number, last name,
-	first name, and department name. */
+	first name, and department name. */	
 
 
-
-SELECT emp_no, last_name, first_name
-FROM employees
-WHERE emp_no IN 
-(
-	SELECT emp_no
-	FROM dept_emp
-	WHERE dept_no IN
-	(
-		SELECT dept_no
-		FROM departments
-		WHERE dept_name = 'Sales' OR dept_name = 'Development'));
-
-
-
-
-
+SELECT e.emp_no, e.last_name, e.first_name, d.dept_name
+FROM departments AS d
+JOIN dept_emp AS de ON (d.dept_no = de.dept_no)
+JOIN employees AS e ON (de.emp_no = e.emp_no)
+Where dept_name = 'Sales' OR dept_name = 'Development';
 
 
 
